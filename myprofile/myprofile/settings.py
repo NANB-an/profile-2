@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-zui-(vfqs3+k#xt%*o3plgza9fchl%#!za0hyh_4ib-9w*5g=1
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = ['profile-2-qxmt.onrender.com', 'localhost', '127.0.0.1']
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'myprofile.urls'
+ROOT_URLCONF = 'myprofile.myprofile.urls'
 
 TEMPLATES = [
     {
