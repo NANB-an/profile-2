@@ -1,0 +1,121 @@
+{% block content %}
+  <div class="container">
+    <h2>Register</h2>
+
+    <form method="post" class="form-container">
+      {% csrf_token %}
+      <div class="form-group">
+        {{ form.as_p }}
+      </div>
+      <button type="submit" class="btn-submit">Register</button>
+    </form>
+
+    <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+
+    {% if messages %}
+      <div class="error-messages">
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+
+{% endblock %}
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .btn-submit {
+    padding: 10px;
+    background-color:#007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+
+  .btn-submit:hover {
+    background-color: #007bff;
+  }
+
+  .login-link {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .login-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+
+  .error-messages {
+    color: red;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .error-messages ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .error-messages li {
+    margin-bottom: 5px;
+  }
+</style>
